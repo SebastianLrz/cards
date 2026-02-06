@@ -19,6 +19,13 @@ func Empty() *Hand {
 
 func Start5(d *deck.Deck) *Hand {
 	h := Empty()
+	for i := 0; i < 5; i++ {
+		Draw(d, h)
+	}
+	return h
+}
+
+func Draw(d *deck.Deck, h *Hand) *Hand {
 	h.cards = append(h.cards, d.Draw())
 	return h
 }
